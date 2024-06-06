@@ -7,7 +7,7 @@ This README.md is divided into two sections. A short introduction part just goin
 ______________________________________
 Short introduction:
 
-This repo is contains an API for checking the ten most frequent words in a string that is passed as an argument, with their frequency. The API sets up a local host through which you can parse your input. The function accepts Roman letters and numbers, including the Swedish letters Å,Ä and Ö.
+This repo contains an API for checking the ten most frequent words in a string that is passed as an argument, with their frequency. The API is based on the spring framework, written in Java. The API sets up a local host through which you can parse your input. The function accepts Roman letters and numbers, including the Swedish letters Å,Ä and Ö. Here you call the method "/count" after the local host adress to call the count method.
 
 
 There are two ways to call the API. Either through running the .jar file found in 
@@ -40,5 +40,27 @@ ________________________________________________________________________________
 
 
 More Detailed Explanation of each class:
- 
+
+
+**CGiTaskApplication**:
+Main function. Boots up the spring  boot application.
+
+
+**UserController**:
+
+Conatins the method "getString" which fetches the string parsed through the API call. It then creates a WordFrequency object through UserService class to be able to compute the word frequency.
+
+**UserService**:
+
+creates a WordFrequency object and calls the count method of the object. This will return the JSON string of word counts.
+
+**WordFrequency**:
+
+A class with a string "input" as its own class parameter. "Input" is the input string gathered from UserController. The WordFrequency class has its own method "count" which calls on two public static classes "calculateFrequencies" and "returnList" belonging to the WordFrequencyUtils class. "count" returns the JSON string, which is the return value of the API.
+
+
+
+**WordFrequencyUtils**:
+
+The class contists of two methods "calculateFrequencies" and "WordFrequencyUtils".The first method returns a sorted list with hashmaps containing the unique words and their frequencies. It removes any prohibiteed characters and then checks for the words, separated by spaces.  "returnList" uses the return value from "calculateFrequencies" to return the ten most frequent words in a JSON string format.  
  
