@@ -36,6 +36,8 @@ will be a JSON string with the word and its respectice frequency:
 
 Note: An assumption for this function is that numbers and "numbered words" such as "1945s" are assumed to be a counted as a word. The signs such as -,?,! etc will not be included.
 
+Note: Passing an empty string will result in the return "::1" 
+
 ________________________________________________________________________________
 
 
