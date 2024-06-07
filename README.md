@@ -30,7 +30,7 @@ This is an example of the input which you can call the API with:
 
  
 **Output:**
-will be a JSON string with the word and its respectice frequency:
+will be a JSON look-alike string with the word and its respectice frequency:
  {"bönan":2,"katt":2,"a":1,"hund":1,"were":1,"1945s":1,"time":1,"to":1,"äpple":1,"good":1}
 
 
@@ -54,15 +54,15 @@ Conatins the method "getString" which fetches the string parsed through the API 
 
 **UserService**:
 
-creates a WordFrequency object and calls the count method of the object. This will return the JSON string of word counts.
+creates a WordFrequency object and calls the count method of the object. This will return the JSON look-alike string of word counts.
 
 **WordFrequency**:
 
-A class with a string "input" as its own class parameter. "Input" is the input string gathered from UserController. The WordFrequency class has its own method "count" which calls on two public static classes "calculateFrequencies" and "returnList" belonging to the WordFrequencyUtils class. "count" returns the JSON string, which is the return value of the API.
+A class with a string "input" as its own class parameter. "Input" is the input string gathered from UserController. The WordFrequency class has its own method "count" which calls on two public static classes "calculateFrequencies" and "returnList" belonging to the WordFrequencyUtils class. "count" returns the JSON look-alike string, which is the return value of the API.
 
 
 
 **WordFrequencyUtils**:
 
-The class contists of two methods "calculateFrequencies" and "WordFrequencyUtils".The first method returns a sorted list with hashmaps containing the unique words and their frequencies. It removes any prohibiteed characters and then checks for the words, separated by spaces.  "returnList" uses the return value from "calculateFrequencies" to return the ten most frequent words in a JSON string format.  
+The class contists of two methods "calculateFrequencies" and "WordFrequencyUtils".The first method returns a sorted list with hashmaps containing the unique words and their frequencies. It removes any prohibiteed characters and then checks for the words, separated by spaces.  "returnList" uses the return value from "calculateFrequencies" to return the ten most frequent words in a JSON look-alike string format.  
  
